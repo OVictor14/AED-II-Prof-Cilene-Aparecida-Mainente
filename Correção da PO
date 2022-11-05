@@ -1,0 +1,154 @@
+Ex1
+
+#include <stdio.h>
+
+int main()
+{
+    int V[5], I, J, A;
+    
+    V[0]=2;
+    V[1]=0;
+    V[2]=4;
+    V[3]=3;
+    V[4]=1;
+    
+    for(I=1;I<3;I++){
+        for(J=2;J<3-I;J++){
+            if(V[J]>V[J+1]){
+                A=V[J];
+                V[J]=V[J+1];
+                V[J+1]=A;
+            }
+            printf("\n%d %d %d %d %d",V[0], V[1], V[2], V[3], V[4]);
+        }
+    }
+
+    return 0;
+}
+
+Ex2
+
+Se a passagem é por valor, uma cópia das variável original
+é passada para a função.
+Mesmo que o valor do parâmetro seja alterado dentro da função,
+o valor original ( fora da função) não será alterado quando a função terminar a
+execução
+
+a) Verdadeiro
+
+Ex4
+
+Assinale a alternativa que ao valor da variável n, considerando n = função a (20).
+
+int funcao_c(int c){
+        returnc/2;
+    }
+    
+    int funcao_b(int i){
+        int k=funcao_c(i-3)*3;
+        return (k);
+    }
+    
+    int funcao_a(int n){
+        int x=funcao_b(n-1)+6;
+        return x;
+    }
+    
+    b) n = 30
+    
+    Ex5
+    
+    Considere a seguinte definição de um tipo de dado heterogêneo .
+    Assinale a alternativa que contém a forma correta de declaração
+    de uma variável chamada aluno1 do novo tipo definido na
+    imagem abaixo: tipoAlunoUSCS
+    
+    typedef struct {
+
+    char nome[50];
+    int idade;
+    char email [30];
+    int matricula;
+
+    } tipoAlunoUSCS;
+    
+    b) tipoAlunoUSCS aluno1;
+    
+    Ex6
+    
+    Um sistema bancário manipula dois dados principais: cliente e conta. Implemente esses dois tipos de dados em C.
+    Nome dos Registros: Cliente e Conta. Campos: O nome do Cliente é uma informação relevante. O CPF poderá ser utilizado
+    para diferenciar clientes com o mesmo nome. Cada conta poderia ter um número de conta único, que serviria para
+    identificar a conta do cliente. Cada conta terá um saldo, eu será gerenciado pelo sistema. Como cada cliente pode possuir
+    mais de uma conta bancária, junto com a conta deveremos registrar qual cliente é o dono dela. O CPF DO CLIENTE SERÁ
+    USADO NA CONTA PARA IDENTIFICAR O SEU DONO.
+    
+    typedef struct {
+    char nome[100];
+    int CPF;
+    } Cliente;
+    
+    typedef struct{
+    int numeroconta;
+    int CPF;
+    double saldo;
+    } Conta;
+    
+    Ex7
+    
+    Considere a realização de uma pesquisa de 1.000 pessoas para obtenção das seguintes informações:
+
+    o valor da maior altura;
+    o valor da menor altura;
+    a média das alturas;
+    Quantas pessoas tem a altura inferior à média das alturas;
+
+    Considere ainda que um programador foi selecionado para desenvolver um modelo de código que
+    soluciona o problema automatizando a coleta das alturas e a geração de informações.
+
+    Com base nas informações apresentadas, desenvolva o código adequado para resolver o problema
+    usando pseudocódigo ou uma linguagem de programação.
+    
+    #include <stdio.h>
+#define TAM 1000
+
+int main()
+{
+    float h[TAM];
+    int i, hinfm;
+    
+    float menorh=0, maiorh=0, mediah=0;
+    
+    printf("Entre com as alturas para preencher o array: \n");
+    for(i=0;i<TAM;i++){
+        scanf("%f", &h[i]);
+    }
+    
+    maiorh=h[0];
+    menorh=h[0];
+    
+    for(i=0;i<TAM;i++){
+        mediah=mediah+h[i];
+        if(menorh>h[i]){
+            menorh=h[i];
+        }
+        if(maiorh<h[i]){
+            maiorh=h[i];
+        }
+    }
+    
+    mediah=mediah/TAM;
+    
+    printf("\n Altura Média: %f", mediah);
+    for(i=0;i<TAM;i++){
+        if(h[i]<mediah){
+            hinfm=hinfm+1;
+        }
+    }
+    
+    printf("\nMENOR ALTURA: %f", menorh);
+    printf("\nMAIOR ALTURA: %f", maiorh);
+    printf("\nQuantidade de pessoas com altura inferior a média: %d", hinfm);
+    
+    return 0;
+}

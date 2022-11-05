@@ -1,0 +1,54 @@
+
+#include <stdio.h>
+#include<string.h>
+#define TAM 1
+
+typedef struct {
+	char nome[15];
+	char estilo[15];
+	int qtdIntegrantes;
+	int rank;
+}Banda;
+
+void leBanda(Banda *V){ 
+    
+    for(int i=0; i< TAM; i++){
+	printf("Insira o nome da Banda: ");
+	scanf("%s", V[i].nome);
+	printf("Insira o estilo da Banda: ");
+	scanf("%s", V[i].estilo);
+	printf("Insira a quantidade de integrantes: ");
+	scanf("%d", &V[i].qtdIntegrantes);
+	printf("Insira o ranking: ");
+	scanf("%d", &V[i].rank);
+}} ;
+
+void exibeBanda(Banda *V){
+    printf("\nAs bandas registradas são: ");
+		for(int i=0; i< TAM; i++){
+	printf("\nO nome da banda é %s, do estilo %s, com %d integrante(s) e está na posição %d dentro do ranking\n", V[i].nome, V[i].estilo,V[i].qtdIntegrantes,  V[i].rank);
+
+}} ;
+
+void encontraBanda(Banda *V){
+    char aux[50];
+    printf("Qual seu estilo de música? ");
+    scanf("%s", aux);
+    for(int i=0; i<TAM; i++){
+        if(strcmp(aux, V[i].estilo) == 0 ){
+            printf("A banda %s atende ao seu estilo", V[i].nome);
+        }else{ printf("Nenhuma banda atende ao seu estilo");
+    }
+    
+}
+}
+
+int main()
+{
+	Banda V[TAM];
+	leBanda(V);
+	encontraBanda(V);
+	exibeBanda(V);
+	
+	return 0;
+}

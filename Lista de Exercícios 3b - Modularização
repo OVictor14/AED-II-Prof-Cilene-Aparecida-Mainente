@@ -1,0 +1,13 @@
+1. Escreva um programa que implemente uma função que retorne a diferença entre dois números inteiros digitados pelo usuário.  
+
+2. Escreva uma função que retorne a divisão entre dois números inteiros. Atenção para a questão da divisão por zero! A divisão não pode ocorrer se o divisor for zero.  
+
+3. Escreva um programa que calcule a área de um círculo a partir de uma função especialmente desenhada para isso; essa função recebe o valor do raio e retorna a área do círculo.  
+
+4. Crie um sistema de caixa eletrônico, utilizando menus (switch) e outros recursos, que realizem operações financeiras a partir de funções especificamente projetadas para tal. Lembre-se de que o caixa eletrônico é um programa que roda como repetição contínua, até que o usuário decida encerrar as operações. Operações: Depósito, Saque e Saldo.  
+
+5. Crie uma função que determine se dado caracter está entre ‘a’ e ‘z’. Dica: Use a tabela ASCII.  
+
+6. Escreva um programa que implemente uma função que passe dado número inteiro como parâmetro, e este desenhe um número equivalente a “*” na tela.  
+
+7. Escreva uma função que retorne o cubo do valor passado como argumento.

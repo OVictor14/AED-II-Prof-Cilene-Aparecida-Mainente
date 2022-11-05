@@ -1,0 +1,71 @@
+Alterar o codigo da média da sala para 
+1) CRIAR UMA FUNÇÃO CHAMADA lenota que le uma nota e a valida - tem que estar entre 0 e 10. A função deve RETORNAR essa nota VÁLIDA. 
+2) Substituir os dois scanfs de Nota1 e Nota2 pela chamada à função criada.
+
+/******************************************************************************
+Victor Augusto Carrillo Silva - RM:8123561
+26/09/2022
+*******************************************************************************/
+#include <stdio.h>
+
+ float calculamedia( float N1, float N2)
+{
+    float md;
+    md = (N1 + N2)/2;
+    return (md);
+}
+
+float lenota(){
+    float nota = 20;
+    while(nota < 0 || nota > 10){
+        printf("Digite um valor valido entre zero e dez: ");
+        scanf("%f", &nota);
+    }
+    return nota;
+}
+
+int main() {
+    
+    #define QTDALUNO 3
+    struct estruturaAluno {
+             int matricula;
+             float N1;
+             float N2;
+             float media;
+    };
+    struct estruturaAluno aluno[QTDALUNO];
+    
+    // Entrada de DADOS
+        float soma, mediasala;
+        
+        for (int i = 0; i < QTDALUNO; i++){
+           printf( "||||||||||||||||||||DADOS DO ALUNO||||||||||||||||||| \n\n");
+           printf( "Matrícula do aluno: ");
+           scanf ("%d" ,&aluno[i].matricula);
+           printf("\nNota n1: ");
+           aluno[i].N1 = lenota();
+           printf("\nNota n2: ");
+           aluno[i].N2 = lenota();
+        }
+       
+    // Processamento
+        
+        for (int i = 0; i < QTDALUNO; i++){
+            aluno[i].media = calculamedia(aluno[i].N1,aluno[i].N2);
+            soma += aluno[i].media;
+        }
+        mediasala = soma/QTDALUNO;
+        
+
+    // Saída - Impressão do Boletim do Aluno
+        for (int i = 0; i < QTDALUNO; i++){
+            printf( "\nBOLETIM DO ALUNO %d\n", aluno[i].matricula);
+            printf( "\nNota N1: %.1f", aluno[i].N1);
+            printf( "\nNota N2: %.1f", aluno[i].N2);
+            printf( "\nMedia..: %.1f", aluno[i].media);
+        }
+        
+        printf("\nQTD Aluno: %d", QTDALUNO);
+        printf("\nMédia da sala: %.1f", mediasala);
+        return (0);
+}

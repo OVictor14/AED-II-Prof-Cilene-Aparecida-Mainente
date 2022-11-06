@@ -1,7 +1,9 @@
 /******************************************************************************
 Victor Augusto Carrillo Silva - RM:8123561 
 19/09/22
+Imprime um quadrado de caracteres e exibe quantos caracteres foram imprimidos
 *******************************************************************************/
+
 #include <stdio.h>
 int imprime (char var, int x) {
     for (int l=1; l<=x; l++){

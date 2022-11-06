@@ -1,3 +1,8 @@
+/******************************************************************************
+Victor Augusto Carrillo Silva - RM:8123561
+Exercício de Recusividade - Criar uma função que conta de numero sugerido até o limite e outra função que exibe o numero sugerido incermentado por 2
+*******************************************************************************/
+
 #include <stdlib.h>
 
 void ciclo (int n, int limite){

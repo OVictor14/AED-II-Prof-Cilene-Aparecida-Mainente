@@ -1,0 +1,84 @@
+/******************************************************************************
+Victor Augusto Carrillo Silva - RM:8123561
+Struct - Exemplo Média aluno
+
+*******************************************************************************/
+#include <stdio.h>
+#define Quantidade 3
+
+ float calculamedia(float N1, float N2){
+    float md;
+    md = (N1 + N2)/2;
+    return (md);
+}
+
+float lernotas(){
+    float nota = 20;
+    if(nota < 0 || nota > 10){
+        printf( "Digite sua Nota: ");
+        scanf("%f", &nota);
+        printf( "\n");
+    }
+    if(nota>10){
+        printf( "!!NOTA INVALIDA!!\n");
+        printf( "Digite sua Nota novamente!!\n\n");
+    }
+    
+    
+    return nota;
+}
+
+int main() {
+    
+    int i;
+    float mds;
+    
+    struct estruturaAluno{
+             int matricula;
+             float N1;
+             float N2;
+             float media;
+    };
+    struct estruturaAluno aluno[Quantidade];
+    
+    // Entrada de DADOS
+    
+    for(i=0;i<Quantidade;i++){
+       printf( "||||||||||||||||||||DADOS DO ALUNO||||||||||||||||||| \n\n");
+       printf( "Matrícula do aluno: ");
+       scanf ("%d" ,&aluno[i].matricula);
+       //printf( "Nota N1: ");
+       aluno[i].N1 = lernotas();
+       //scanf ("%f", &aluno[i].N1);
+       //printf( "Nota N2: ");
+       aluno[i].N2 = lernotas();
+       //scanf ("%f", &aluno[i].N2);
+    }
+    // Processamento
+    
+    for(i=0;i<Quantidade;i++){
+        aluno[i].media = calculamedia(aluno[i].N1,aluno[i].N2);
+    }
+    
+    for(i=0;i<Quantidade;i++){
+        aluno[i].media = calculamedia(aluno[i].N1,aluno[i].N2);
+        mds += aluno[i].media;
+    }
+    
+    mds = mds/Quantidade;
+
+    // Saída - Impressão do Boletim do Aluno
+    
+    for(i=0;i<Quantidade;i++){
+        printf( "\nBOLETIM DO ALUNO\n");
+        printf( "\nNota N1: %.1f", aluno[i].N1);
+        printf( "\nNota N2: %.1f", aluno[i].N2);
+        printf( "\nMedia..: %.1f\n", aluno[i].media);
+    }
+    printf( "\nBOLETIM DA SALA\n");
+    printf( "\nMEDIA DA SALA É  %.1f\n", mds);
+    return (0);
+}
+
+
+

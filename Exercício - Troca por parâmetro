@@ -1,40 +1,47 @@
 /******************************************************************************
 Victor Augusto Carrillo Silva - RM:8123561
 12/09/2022
+Troca os valores das variaveis e calcula o quadrado e cubos dos valores
 *******************************************************************************/
 #include <stdio.h>
-void soma (int a, int b, int *resultado) {
-    *resultado=a +b;
+
+void soma (int a, int b, int *resultado){
+    *resultado=a+b;
 }
-void quadradocubo(int a, int b, 
-     int *quadrado, int *cubo) {
+
+void quadradocubo(int a, int b, int *quadrado, int *cubo){
     *quadrado=a*a;
-    *cubo= b*b*b;
+    *cubo=b*b*b;
 }
-void troca (int *a, int *b) {
+
+void troca (int *a, int *b){
     int aux = *a;
     *a = *b;
     *b = aux;
-    printf ("(Funcao) apos a troca a=%d e b=%d",*a,*b);
+    printf ("\nApós a função Função, foi trocado A=%d e B=%d",*a,*b);
 }
 
 int main()
 {
     int a, b, resultado, cubo,quadrado;
     
-    printf("digite 2 numeros " );
+    printf("Digite um numero: ");
     scanf ("%d", &a);
+    
+    printf("\nDigite outro numero: ");
     scanf ("%d", &b);
     
     troca (&a,&b);
     
-    printf ("\n(main) apos a troca a=%d e b=%d",a,b);
+    printf ("\nApós a função Main, foi trocado A=%d e B=%d",a,b);
     
     soma (a,b,&resultado);
-    printf("\n a soma = %d", resultado);
+    
+    printf("\nSoma dos lados=%d", resultado);
+    
     quadradocubo (a,b,&quadrado,&cubo);
 
-    printf ("\nQuadrado= %d cubo=%d",quadrado,cubo);
+    printf ("\nQuadrado=%d; Cubo=%d",quadrado,cubo);
     return 0;
 
 }

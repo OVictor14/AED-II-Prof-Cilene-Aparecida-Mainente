@@ -2,6 +2,8 @@
 05/10/22
 Victor Augusto Carrillo Silva
 Fabrício Clemente Rinaldi
+
+Calcule o perimetro de uma triangulo e indique se o ponto esta acima da reta.
 *******************************************************************************/
 
 #include <stdio.h>
